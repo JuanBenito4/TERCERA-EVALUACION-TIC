@@ -1,0 +1,92 @@
+package Primerasclases;
+
+public class Barco {
+	//Atributos
+	private String nombreBarco;
+	private int tamano;
+	private int numeroPalos;
+	//Constructor
+	public Barco(String nombreBarco, int tamano, int numeroPalos) {
+		super();
+		this.nombreBarco = nombreBarco;
+		this.tamano = tamano;
+		this.numeroPalos = numeroPalos;
+	}
+	//ejemplo de poliformismo : Vamos a sobrecargar
+	public Barco(String nombreBarco) {
+		super();
+		this.nombreBarco = nombreBarco;
+		
+	}
+	public String getNombreBarco() {
+		return nombreBarco;
+	}
+	public void setNombreBarco(String nombreBarco) {
+		this.nombreBarco = nombreBarco;
+	}
+	public int getTamano() {
+		return tamano;
+	}
+	public void setTamano(int tamano) {
+		this.tamano = tamano;
+	}
+	public int getNumeroPalos() {
+		return numeroPalos;
+	}
+	public void setNumeroPalos(int numeroPalos) {
+		this.numeroPalos = numeroPalos;
+	}
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+package Primerasclases;
+
+public class BarcoVelasCuadradas extends Barco {
+	private boolean tieneVelasCuadradas;
+	public BarcoVelasCuadradas(String nombreBarco, int tamano, int numeroPalos,boolean tieneVelasCuadradas) {
+		super(nombreBarco, tamano, numeroPalos);
+		this.tieneVelasCuadradas=tieneVelasCuadradas;
+		// TODO Auto-generated constructor stub
+	}
+	public boolean isTieneVelasCuadradas() {
+		return tieneVelasCuadradas;
+	}
+	public void setTieneVelasCuadradas(boolean tieneVelasCuadradas) {
+		this.tieneVelasCuadradas = tieneVelasCuadradas;
+	}
+	
+}
+
+
+
+
+
+
+package Primerasclases;
+
+public class ManejaBarcos {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Barco miPrimerBarquito, miSegundoBarquito;
+		BarcoVelasCuadradas miBarquitoBebe;
+		miPrimerBarquito= new Barco ("Velero", 12,2);
+		miSegundoBarquito= new Barco ("bergartin", 67,5);
+		System.out.println(miPrimerBarquito.getNombreBarco());
+		System.out.println(miSegundoBarquito.getNombreBarco());
+		miBarquitoBebe= newBarcoVelasCuadradas("trirreme", 10,1,true);
+		System.out.println(miBarquitoBebe.getNombreBarco());
+	}
+
+}
